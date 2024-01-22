@@ -1,9 +1,13 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
+const id = process.env.ID;
+const pw = process.env.PW;
 
 const connect = () => {
   mongoose
     .connect(
-      "mongodb+srv://bubblegum95:semin351227@bubblegum95.9mkvzna.mongodb.net/?retryWrites=true&w=majority",
+      `mongodb+srv://${id}:${pw}@bubblegum95.9mkvzna.mongodb.net/?retryWrites=true&w=majority`,
       {
         dbName: "bubblegum_mall", // spa_mall 데이터베이스명을 사용합니다.
       },
