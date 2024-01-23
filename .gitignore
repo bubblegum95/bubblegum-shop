@@ -119,3 +119,5 @@ dist
 # IDE - Jetbrains
 .vscode/*
 /.vscode
+
+DS_Store
