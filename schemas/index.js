@@ -1,17 +1,9 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-dotenv.config();
-const id = process.env.ID;
-const pw = process.env.PW;
+import mongoose from "mongoose"
 
 const connect = () => {
   mongoose
     .connect(
-      `mongodb+srv://${id}:${pw}@bubblegum95.9mkvzna.mongodb.net/?retryWrites=true&w=majority`,
-      {
-        dbName: "bubblegum_mall", // spa_mall 데이터베이스명을 사용합니다.
-      },
-    )
+      process.env.MONGODB_URL,{dbName: "bubblegum_mall"})
     .catch((err) => console.log(err))
     .then(() => console.log("몽고디비 연결 성공"));
 };
